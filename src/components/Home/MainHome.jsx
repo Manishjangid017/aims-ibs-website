@@ -8,6 +8,9 @@ import GlobalCollaborations from './GlobalCollaborations';
 import GlobalExposure from './GlobalExposure';
 import Placements from './Placements';
 import PlacedStudents from './PlacedStudents';
+import WhyChoose from './WhyChoose';
+import LifeAtIBS from './LifeAtIBS';
+import SparkModel from './SparkModel';
 
 export default function MainHome() {
   return (
@@ -20,6 +23,9 @@ export default function MainHome() {
       <GlobalExposure />
       <Placements />
       <PlacedStudents />
+      <WhyChoose />
+      <LifeAtIBS />
+      <SparkModel />
     </>
   );
 }
