@@ -102,13 +102,13 @@ export default function Header() {
 
             <Link
               href="/apply-now"
-              className="rounded-[3px] border-2 border-brand-orange bg-brand-orange px-5 py-2.5 text-[13px] font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#d63f14] hover:border-[#d63f14]"
+              className="rounded-[3px] border-2 border-brand-orange bg-brand-orange px-5 py-2.5 font-general-sans text-[13px] font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#d63f14] hover:border-[#d63f14]"
             >
               Apply Now
             </Link>
             <Link
               href="/contact-us"
-              className="rounded-[3px] border-2 border-brand-orange bg-white px-5 py-2.5 text-[13px] font-medium uppercase tracking-wide text-black transition-colors hover:bg-brand-orange hover:text-white"
+              className="rounded-[3px] border-2 border-brand-orange bg-white px-5 py-2.5 font-general-sans text-[13px] font-medium uppercase tracking-wide text-black transition-colors hover:bg-brand-orange hover:text-white"
             >
               Contact Us
             </Link>
@@ -120,7 +120,7 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="lg:hidden"
+            className="font-general-sans lg:hidden"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -154,13 +154,13 @@ export default function Header() {
               <div className="flex gap-3 py-4">
                 <Link
                   href="/apply-now"
-                  className="flex-1 rounded-[3px] bg-brand-orange py-3 text-center text-xs font-medium uppercase text-white"
+                  className="flex-1 rounded-[3px] bg-brand-orange py-3 text-center font-general-sans text-xs font-medium uppercase text-white"
                 >
                   Apply Now
                 </Link>
                 <Link
                   href="/contact-us"
-                  className="flex-1 rounded-[3px] border-2 border-brand-orange py-3 text-center text-xs font-medium uppercase"
+                  className="flex-1 rounded-[3px] border-2 border-brand-orange py-3 text-center font-general-sans text-xs font-medium uppercase"
                 >
                   Contact Us
                 </Link>

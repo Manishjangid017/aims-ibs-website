@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
@@ -66,7 +64,7 @@ export default function HomeHero() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/apply-now"
-                className="inline-flex items-center gap-3 border border-brand-orange bg-brand-orange px-5 py-3 text-xs font-medium uppercase tracking-wide transition-colors hover:bg-[#d63f14]"
+                className="inline-flex items-center gap-3 border border-brand-orange bg-brand-orange px-5 py-3 font-general-sans text-xs font-medium uppercase tracking-wide transition-colors hover:bg-[#d63f14]"
               >
                 Join Today
                 <ArrowRight className="h-4 w-4" />
@@ -74,7 +72,7 @@ export default function HomeHero() {
               <a
                 href="/handbook.pdf"
                 download
-                className="inline-flex items-center gap-3 border border-white px-5 py-3 text-xs font-medium uppercase tracking-wide transition-colors hover:bg-white hover:text-black"
+                className="inline-flex items-center gap-3 border border-white px-5 py-3 font-general-sans text-xs font-medium uppercase tracking-wide transition-colors hover:bg-white hover:text-black"
               >
                 Download Handbook
                 <Download className="h-4 w-4" />

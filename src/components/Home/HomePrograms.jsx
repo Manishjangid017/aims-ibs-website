@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -154,7 +152,7 @@ export default function HomePrograms() {
               />
               <Link
                 href={MASTERS.href}
-                className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 bg-brand-orange px-5 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#d63f14]"
+                className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 bg-brand-orange px-5 py-2.5 font-general-sans text-xs font-medium text-white transition-colors hover:bg-[#d63f14]"
               >
                 Know More <ArrowRight className="size-3.5" />
               </Link>
@@ -205,7 +203,7 @@ export default function HomePrograms() {
                       <Link
                         key={s.label}
                         href={s.href}
-                        className="inline-flex items-center gap-1.5 rounded-[3px] bg-[#3F2E8F] 2xl:px-3.5 lg:px-3 2xl:py-2 lg:py-1.5  text-xs font-medium text-white transition-colors hover:bg-brand-orange 2xl:text-sm lg:text-[12px]"
+                        className="inline-flex items-center gap-1.5 rounded-[3px] bg-[#3F2E8F] font-general-sans 2xl:px-3.5 px-2 lg:px-3 2xl:py-2 py-1.5 lg:py-1.5  text-xs font-medium text-white transition-colors hover:bg-brand-orange 2xl:text-sm lg:text-[12px]"
                       >
                         {s.label}
                         <ChevronRight className="size-3.5" />
@@ -250,14 +248,14 @@ export default function HomePrograms() {
 
                   <BulletList items={item.points} className="mt-4 flex-1 text-sm" />
 
-                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#8D78F0] pt-3">
+                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-brand-purple pt-3">
                     <div>
-                      <p className="text-xs text-black/60">Affiliated to:</p>
-                      <p className="text-sm font-semibold sm:text-base">Bangalore University</p>
+                      <p className="text-[11px] text-black/60">Affiliated to:</p>
+                      <p className="lg:text-[19px] text-[18px] font-semibold sm:text-base">Bangalore University</p>
                     </div>
                     <Link
                       href={item.href}
-                      className="inline-flex shrink-0 items-center gap-2 bg-brand-orange px-4 py-3 text-[11px] font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#d63f14]"
+                      className="inline-flex shrink-0 items-center gap-2 bg-brand-orange px-4 py-3 font-general-sans text-[11px] font-medium uppercase rounded-sm tracking-wide text-white transition-colors hover:bg-[#d63f14]"
                     >
                       Learn More <ArrowRight className="size-3.5" />
                     </Link>

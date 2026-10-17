@@ -3,6 +3,10 @@ import React from 'react';
 import HomeHero from './HomeHero';
 import HomeStates from './HomeStates';
 import HomePrograms from './HomePrograms';
+import RankedSection from './RankedSection';
+import GlobalCollaborations from './GlobalCollaborations';
+import GlobalExposure from './GlobalExposure';
+import Placements from './Placements';
 
 export default function MainHome() {
   return (
@@ -10,6 +14,10 @@ export default function MainHome() {
       <HomeHero />
       <HomeStates />
       <HomePrograms />
+      <RankedSection />
+      <GlobalCollaborations />
+      <GlobalExposure />
+      <Placements />
     </>
   );
 }
