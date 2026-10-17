@@ -1,12 +1,18 @@
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, Download, Play } from 'lucide-react';
+import Marquee from 'react-fast-marquee';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const VIDEOS = [
   { id: 1, name: 'Devaiah K U', src: 'images/home/placement-1.mp4', poster: 'images/home/video-img-1.webp' },
   { id: 2, name: 'Anjali', src: 'images/home/placement-2.mp4', poster: 'images/home/video-img-2.webp' },
   { id: 3, name: 'Devaiah K U', src: 'images/home/placement-1.mp4', poster: 'images/home/video-img-1.webp' },
   { id: 4, name: 'Anjali', src: 'images/home/placement-2.mp4', poster: 'images/home/video-img-2.webp' },
+  { id: 5, name: 'Devaiah K U', src: 'images/home/placement-1.mp4', poster: 'images/home/video-img-1.webp' },
+  { id: 6, name: 'Anjali', src: 'images/home/placement-2.mp4', poster: 'images/home/video-img-2.webp' },
 ];
 
 const STATS = [
@@ -26,7 +32,7 @@ function VideoCard({ name, src, poster }) {
   };
 
   return (
-    <div className="relative aspect-[3/5] overflow-hidden bg-black shadow-[0_14px_30px_rgba(0,0,0,0.18)]">
+    <div className="relative aspect-[3/5] overflow-hidden bg-black shadow-[0px_8px_10px_-6px_#0000001A,0px_20px_25px_-5px_#0000001A]">
       <video
         ref={videoRef}
         src={src}
@@ -52,6 +58,47 @@ function VideoCard({ name, src, poster }) {
   );
 }
 
+function LogoRow({ logos, direction }) {
+  return (
+    <Marquee direction={direction} speed={40} gradient={false} autoFill pauseOnHover>
+      {logos.map((logo) => (
+        <div
+          key={logo.src}
+          className="relative mx-2 h-14 w-28 border border-[#D9DDEA] bg-white sm:mx-3 sm:h-16 sm:w-36 lg:mx-3.5 lg:h-[73px] lg:w-[167px]"
+        >
+          <Image
+            src={process.env.IMG_PATH + logo.src}
+            alt={logo.alt}
+            fill
+            sizes="170px"
+            quality={100}
+            unoptimized
+            className="object-contain"
+          />
+        </div>
+      ))}
+    </Marquee>
+  );
+}
+
+const LOGOS = [
+  { src: 'images/home/company-logo-1.webp', alt: 'Company logo 1' },
+  { src: 'images/home/company-logo-2.webp', alt: 'Company logo 2' },
+  { src: 'images/home/company-logo-3.webp', alt: 'Company logo 3' },
+  { src: 'images/home/company-logo-4.webp', alt: 'Company logo 4' },
+  { src: 'images/home/company-logo-5.webp', alt: 'Company logo 5' },
+  { src: 'images/home/company-logo-6.webp', alt: 'Company logo 6' },
+];
+
+const ROW_2 = [
+  { src: 'images/home/company-logo-7.webp', alt: 'Company logo 7' },
+  { src: 'images/home/company-logo-8.webp', alt: 'Company logo 8' },
+  { src: 'images/home/company-logo-9.webp', alt: 'Company logo 9' },
+  { src: 'images/home/company-logo-10.webp', alt: 'Company logo 10' },
+  { src: 'images/home/company-logo-11.webp', alt: 'Company logo 11' },
+  { src: 'images/home/company-logo-12.webp', alt: 'Company logo 12' },
+];
+
 export default function Placements() {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -63,13 +110,18 @@ export default function Placements() {
   };
 
   return (
-    <section className="bg-white py-12 lg:py-[100px]">
+    <section className="bg-white pt-12 lg:pt-[100px] pb-[20px] lg:pb-[40px]">
       <div className="custom-container">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-[50px]">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-[50px] mb-[44px] lg:mb-[64px]">
           {/* Left: video slider */}
           <div className="order-2 min-w-0 lg:order-1">
             <Swiper
+              modules={[Autoplay]}
+              loop
+              loopedslides={2}
+              roundLengths
               slidesPerView="auto"
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
               spaceBetween={0}
               speed={600}
               className="!pb-6"
@@ -95,16 +147,14 @@ export default function Placements() {
               <button
                 type="button"
                 aria-label="Previous"
-                disabled={isBeginning}
                 onClick={() => swiperRef.current?.slidePrev()}
-                className="grid size-11 place-items-center border-2 border-brand-orange bg-[#FFF1EC] text-black transition-colors hover:bg-brand-orange hover:text-white disabled:pointer-events-none disabled:opacity-50"
+                className="grid size-11 place-items-center border-2 border-brand-orange bg-[#FFF5E4] text-black transition-colors hover:bg-brand-orange hover:text-white disabled:pointer-events-none disabled:opacity-50"
               >
                 <ChevronLeft className="size-5" />
               </button>
               <button
                 type="button"
                 aria-label="Next"
-                disabled={isEnd}
                 onClick={() => swiperRef.current?.slideNext()}
                 className="grid size-11 place-items-center border-2 border-brand-orange bg-brand-orange text-white transition-colors hover:border-[#d63f14] hover:bg-[#d63f14] disabled:pointer-events-none disabled:opacity-50"
               >
@@ -166,6 +216,17 @@ export default function Placements() {
             </a>
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.25 }}
+          className="space-y-4 overflow-hidden rounded-md bg-[url('/images/home/company-logo-bg.webp')] bg-cover bg-center px-2 py-4 lg:space-y-[27px] lg:px-4 lg:py-5"
+        >
+          <LogoRow logos={LOGOS} direction="left" /> {/* right to left */}
+          <LogoRow logos={ROW_2} direction="right" /> {/* left to right */}
+        </motion.div>
       </div>
     </section>
   );

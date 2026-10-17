@@ -52,7 +52,7 @@ export default function GlobalCollaborations() {
               type="button"
               aria-label="Previous"
               onClick={() => swiperRef.current?.slidePrev()}
-              className="grid size-11 place-items-center border-2 border-brand-orange bg-[#FFF1EC] font-general-sans text-black transition-colors hover:bg-brand-orange hover:text-white"
+              className="grid size-11 place-items-center border-2 border-brand-orange bg-[#FFF5E4] font-general-sans text-black transition-colors hover:bg-brand-orange hover:text-white"
             >
               <ChevronLeft className="size-5" />
             </button>

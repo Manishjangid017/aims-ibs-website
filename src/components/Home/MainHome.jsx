@@ -7,6 +7,7 @@ import RankedSection from './RankedSection';
 import GlobalCollaborations from './GlobalCollaborations';
 import GlobalExposure from './GlobalExposure';
 import Placements from './Placements';
+import PlacedStudents from './PlacedStudents';
 
 export default function MainHome() {
   return (
@@ -18,6 +19,7 @@ export default function MainHome() {
       <GlobalCollaborations />
       <GlobalExposure />
       <Placements />
+      <PlacedStudents />
     </>
   );
 }
