@@ -3,8 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { ChevronLeft, ChevronRight, Download, Play } from 'lucide-react';
 
 const VIDEOS = [
-  { name: 'Devaiah K U', src: '/videos/placement-1.mp4', poster: '/images/home/placement-video-1.webp' },
-  { name: 'Anjali', src: '/videos/placement-2.mp4', poster: '/images/home/placement-video-2.webp' },
+  { id: 1, name: 'Devaiah K U', src: 'images/home/placement-1.mp4', poster: 'images/home/video-img-1.webp' },
+  { id: 2, name: 'Anjali', src: 'images/home/placement-2.mp4', poster: 'images/home/video-img-2.webp' },
+  { id: 3, name: 'Devaiah K U', src: 'images/home/placement-1.mp4', poster: 'images/home/video-img-1.webp' },
+  { id: 4, name: 'Anjali', src: 'images/home/placement-2.mp4', poster: 'images/home/video-img-2.webp' },
 ];
 
 const STATS = [
@@ -28,7 +30,7 @@ function VideoCard({ name, src, poster }) {
       <video
         ref={videoRef}
         src={src}
-        poster={poster}
+        poster={process.env.IMG_PATH + poster}
         preload="metadata"
         playsInline
         controls={playing}
@@ -67,9 +69,8 @@ export default function Placements() {
           {/* Left: video slider */}
           <div className="order-2 min-w-0 lg:order-1">
             <Swiper
-              slidesPerView={1.25}
-              spaceBetween={16}
-              breakpoints={{ 640: { slidesPerView: 2, spaceBetween: 24 } }}
+              slidesPerView="auto"
+              spaceBetween={0}
               speed={600}
               className="!pb-6"
               onSwiper={(swiper) => {
@@ -78,11 +79,13 @@ export default function Placements() {
               }}
               onSlideChange={sync}
               onResize={sync}
-              onBreakpoint={sync}
               onUpdate={sync}
             >
               {VIDEOS.map((v) => (
-                <SwiperSlide key={v.name}>
+                <SwiperSlide
+                  key={v.id}
+                  className="mr-4 w-[calc((100%-16px)/1.25)]! last:mr-0 sm:mr-6 sm:w-[calc((100%-24px)/2)]!"
+                >
                   <VideoCard {...v} />
                 </SwiperSlide>
               ))}
