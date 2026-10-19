@@ -33,13 +33,13 @@ export default function HomeStates() {
       <motion.div
         aria-hidden="true"
         variants={leftShape}
-        className="pointer-events-none absolute left-0 size-16 bg-[url('/images/home/shap-left.webp')] bg-contain bg-left bg-no-repeat md:size-20 lg:size-25"
+        className="pointer-events-none absolute left-0 size-10 bg-[url('/images/home/shap-left.webp')] bg-contain bg-left bg-no-repeat md:size-20 lg:size-25"
       />
 
       <motion.div
         aria-hidden="true"
         variants={rightShape}
-        className="pointer-events-none absolute right-0 size-16 bg-[url('/images/home/shap-right.webp')] bg-contain bg-right bg-no-repeat md:size-20 lg:size-25"
+        className="pointer-events-none absolute right-0 size-10 bg-[url('/images/home/shap-right.webp')] bg-contain bg-right bg-no-repeat md:size-20 lg:size-25"
       />
 
       <div className="custom-container relative z-10">

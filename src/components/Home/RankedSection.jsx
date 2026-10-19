@@ -36,7 +36,7 @@ export default function RankedSection() {
         {/* Heading + 3x3 boxes image as the ::after element */}
         <div
           className="relative mb-6 lg:mb-10
-            after:pointer-events-none after:absolute after:right-0 after:top-1 after:h-6 after:w-12 after:bg-[url('/images/home/bg-shap-1.webp')] after:bg-contain after:bg-right after:bg-no-repeat
+            after:pointer-events-none after:absolute after:right-0 after:top-9 after:h-6 after:w-12 after:bg-[url('/images/home/bg-shap-1.webp')] after:bg-contain after:bg-right after:bg-no-repeat
             sm:after:h-8 sm:after:w-16 lg:after:top-4 lg:after:h-9 lg:after:w-20"
         >
           <h2 className="text-[28px] font-light sm:text-[42px] lg:text-[48px]">
@@ -45,7 +45,7 @@ export default function RankedSection() {
         </div>
 
         {/* Students card */}
-        <div className="relative min-h-[540px] overflow-hidden sm:min-h-[440px] lg:aspect-[769/357] lg:min-h-0">
+        <div className="relative min-h-[480px] lg:min-h-[540px] overflow-hidden sm:min-h-[440px] lg:aspect-[769/357] lg:min-h-0">
           <Image
             src={process.env.IMG_PATH + 'images/home/ranked-bg-img.webp'}
             alt="AIMS IBS students"
@@ -54,7 +54,7 @@ export default function RankedSection() {
             className="object-cover object-bottom"
           />
 
-          <div className="relative z-10 grid grid-cols-2 gap-x-6 gap-y-8 p-6 text-white sm:p-8 lg:grid-cols-[176fr_185fr_228fr_180fr] lg:gap-0">
+          <div className="relative z-10 grid grid-cols-1 gap-x-6 gap-y-8 p-6 text-white sm:p-8 lg:grid-cols-[176fr_185fr_228fr_180fr] lg:gap-0">
             {RANKS.map((item, i) => (
               <div key={item.rank} className="relative lg:pl-8 lg:first:pl-0 xl:pl-14 xl:first:pl-0">
                 {/* Vertical divider (desktop only) */}
@@ -65,26 +65,28 @@ export default function RankedSection() {
                   />
                 )}
 
-                <p className="text-sm font-bold leading-snug sm:text-[19px]">
+                <p className="text-[14px] font-bold leading-snug sm:text-[19px]">
                   {item.label.map((line) => (
-                    <span key={line} className="block">
+                    <span key={line} className="lg:block">
                       {line}
                     </span>
                   ))}
                 </p>
-                <p className="mt-1 text-[32px] font-bold text-[#F8B683] sm:text-[38px]">{item.rank}</p>
+                <div className="lg:block flex gap-[24px]">
+                  <p className="mt-1 text-[32px] font-bold text-[#F8B683] sm:text-[38px]">{item.rank}</p>
 
-                <div className="mt-3 flex items-center gap-1">
-                  {item.logos.map((logo) => (
-                    <Image
-                      key={process.env.IMG_PATH + logo.src}
-                      src={process.env.IMG_PATH + logo.src}
-                      alt={logo.alt}
-                      width={logo.w}
-                      height={logo.h}
-                      className="h-10 w-auto sm:h-12"
-                    />
-                  ))}
+                  <div className="mt-3 flex items-center gap-1">
+                    {item.logos.map((logo) => (
+                      <Image
+                        key={process.env.IMG_PATH + logo.src}
+                        src={process.env.IMG_PATH + logo.src}
+                        alt={logo.alt}
+                        width={logo.w}
+                        height={logo.h}
+                        className="h-10 w-auto sm:h-12"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

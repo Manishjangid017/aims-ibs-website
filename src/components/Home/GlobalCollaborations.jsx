@@ -33,15 +33,15 @@ export default function GlobalCollaborations() {
     <section className="relative isolate overflow-hidden my-[44px] lg:my-[80px] bg-white [--edge:max(2rem,calc((100vw_-_1344px)/2_+_2rem))] lg:bg-[url('/images/home/global-collaboration-bg-img.webp')] bg-top lg:bg-cover">
       {/* Top row: heading (left) + text & arrows (right) */}
       <div className="grid lg:grid-cols-2 lg:items-start lg:pt-20">
-        <div className="px-[var(--edge)] pb-8 pt-12 lg:pb-0 lg:pl-[5.8vw] lg:pr-4 lg:pt-0">
-          <h2 className="text-3xl sm:text-4xl lg:text-[clamp(1.875rem,2.5vw,3rem)] lg:leading-tight">
+        <div className="px-[var(--edge)] pb-[4px] lg:pb-8 pt-6 lg:pb-0 pl-[16px] lg:pl-[5.8vw] lg:pr-4 lg:pt-0">
+          <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] lg:leading-tight">
             <span className="block font-light">Global Collaborations &amp;</span>
             <span className="block font-semibold italic">International Exposure</span>
           </h2>
           <span className="mt-2 block h-[3px] w-20 bg-gradient-to-r from-brand-orange to-transparent" />
         </div>
 
-        <div className="px-[var(--edge)] pb-2 pt-3 text-white lg:bg-transparent lg:pb-0 lg:pl-0 lg:pr-[var(--edge)] lg:pt-3">
+        <div className="px-[var(--edge)] pb-2 pt-3 text-white lg:bg-transparent pl-[16px]  lg:pb-0 lg:pl-0 lg:pr-[var(--edge)] lg:pt-3">
           <p className="max-w-[560px] text-sm leading-relaxed text-[#000000] lg:text-white/90 sm:text-base lg:text-lg">
             Our students receive certifications, internships, sessions, projects, and orientation, exchange &amp;
             twinning programs from a list of partnerships.
@@ -69,8 +69,8 @@ export default function GlobalCollaborations() {
       </div>
 
       {/* Slider: starts at the container's left edge and bleeds to the right edge of the screen */}
-      <div className="pb-12 pt-6 lg:bg-transparent lg:pb-16 lg:pt-10">
-        <div className="pl-[var(--edge)]">
+      <div className="pb-6 pt-6 lg:bg-transparent lg:pb-16 lg:pt-10">
+        <div className="pl-[16px] lg:pl-[var(--edge)]">
           <Swiper
             modules={[Autoplay]}
             loop
@@ -86,14 +86,14 @@ export default function GlobalCollaborations() {
             }}
           >
             {LOOP_SLIDES.map((p, i) => (
-              <SwiperSlide key={`${p.name}-${i}`} style={{ width: 'clamp(405px, 21.3vw, 408px)' }}>
+              <SwiperSlide key={`${p.name}-${i}`} className="!w-[320px] lg:!w-[405px]">
                 <article className="group relative aspect-[245/253] w-[calc(100%+1px)] overflow-hidden bg-[#4B3A9E]">
                   <Image
                     src={process.env.IMG_PATH + p.bg}
                     alt=""
                     aria-hidden="true"
                     fill
-                    sizes="(min-width: 1920px) 408px, 22vw"
+                    sizes="(min-width: 1024px) 405px, 320px"
                     quality={100}
                     unoptimized
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
