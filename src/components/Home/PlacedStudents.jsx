@@ -37,7 +37,7 @@ export default function PlacedStudents() {
   };
 
   return (
-    <section className="bg-white pt-[24px] lg:pb-[80px] pb-[64px] lg:pt-[40px] relative">
+    <section className="bg-white pt-[24px] lg:pb-[80px] pb-[64px] lg:pt-[40px] relative overflow-hidden">
       <div className="custom-container">
         {/* Heading (left) + arrows (right, bottom-aligned with the heading block) */}
         <motion.div
