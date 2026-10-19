@@ -47,7 +47,7 @@ export default function WhyChoose() {
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
-      className="relative bg-[#4B3A9E] bg-[url('/images/home/why-choose-bg-img.webp')] bg-cover bg-center py-12 lg:py-18.25
+      className="relative overflow-hidden bg-[#4B3A9E] bg-[url('/images/home/why-choose-bg-img.webp')] bg-cover bg-center py-12 lg:py-18.25
         before:absolute before:-top-8 before:right-0 before:size-8 before:bg-[#4CC3F0] lg:before:-top-10 lg:before:size-10"
     >
       <div className="custom-container">
