@@ -11,6 +11,7 @@ import PlacedStudents from './PlacedStudents';
 import WhyChoose from './WhyChoose';
 import LifeAtIBS from './LifeAtIBS';
 import SparkModel from './SparkModel';
+import JoinCta from './JoinCta';
 
 export default function MainHome() {
   return (
@@ -26,6 +27,7 @@ export default function MainHome() {
       <WhyChoose />
       <LifeAtIBS />
       <SparkModel />
+      <JoinCta />
     </>
   );
 }
