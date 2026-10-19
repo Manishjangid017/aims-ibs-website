@@ -1,6 +1,12 @@
 const SITE_NAME = "AIMS IBS";
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://www.aimsibs.com";
+
+// Must be a full absolute URL — OG image scrapers (WhatsApp, Slack, Google)
+// require https:// — a relative path will silently fail to load the preview image.
+const SITE_URL = (() => {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  // If the env value is missing, "/", or not starting with http — fall back to the real domain.
+  return raw.startsWith("http") ? raw.replace(/\/$/, "") : "https://www.aimsibs.com";
+})();
 
 const DEFAULT_OG_IMAGE = "/images/home/life-at-ibs-img-21.webp";
 
