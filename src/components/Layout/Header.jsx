@@ -15,7 +15,7 @@ const NAV_LINKS = [
     label: 'About',
     href: '/about-us',
     children: [
-      { label: 'About AIMS IBS', href: '/about-us' },
+      { label: 'Welcome note & Board Members', href: '/aims-ibs-family' },
       { label: 'Leadership', href: '/leadership' },
     ],
   },
