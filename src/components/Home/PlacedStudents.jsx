@@ -47,7 +47,7 @@ export default function PlacedStudents() {
           className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
         >
           <div>
-            <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] leading-[52px]">
+            <h2 className="text-[28px] leading-[36px] sm:text-[32px] lg:text-[48px] lg:leading-[52px]">
               <span className="font-light">Where Learning </span>
               <span className="font-semibold italic">Gets You Hired</span>
             </h2>

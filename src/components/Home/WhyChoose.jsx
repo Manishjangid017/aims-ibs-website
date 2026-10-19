@@ -59,7 +59,7 @@ export default function WhyChoose() {
                 hidden: { opacity: 0, x: -60 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } },
               }}
-              className="text-3xl text-white sm:text-4xl lg:text-[40px] lg:leading-[1.2]"
+              className="text-[28px] text-white sm:text-4xl lg:text-[40px] lg:leading-[1.2]"
             >
               <span className="block font-light">21 Reasons:</span>
               <span className="block">

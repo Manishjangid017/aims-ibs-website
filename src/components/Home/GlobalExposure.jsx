@@ -45,7 +45,7 @@ export default function GlobalExposure() {
           <span className="font-semibold italic">International Exchange</span>
         </h2>
 
-        <div className="relative mt-6 lg:mt-10">
+        <div className="relative mt-8 lg:mt-10">
           {/* Top-right shape */}
           <motion.div
             aria-hidden="true"
