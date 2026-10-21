@@ -112,7 +112,7 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
         />
 
         {/* White logo panel — top portion */}
-        <div className="bg-white w-full p-8 sm:p-10 lg:p-12"
+        <div className="bg-white w-full p-8 "
           style={{ height: '60%' }}
         >
           <div className="relative h-full w-full">
@@ -120,7 +120,7 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
               src={process.env.IMG_PATH + logo}
               alt={logoAlt}
               fill
-              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+              sizes="100vw"
               className="object-contain"
               quality={100}
               unoptimized
@@ -131,7 +131,7 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
         {/* Bottom text */}
         <div className="relative px-8 pb-8 sm:px-10 sm:pb-10 lg:px-12 lg:pb-12">
           <p className="text-[12px] text-white sm:text-[14px] text-center md:text-start">{badge}</p>
-          <p className="mt-1 text-[16px] font-semibold leading-snug text-white sm:text-[20px] lg:text-[24px] text-center md:text-start">
+          <p className="mt-1 md:mt-2 text-[16px] leading-snug text-white sm:text-[20px] lg:text-[24px] text-center md:text-start">
             {title}
           </p>
         </div>
@@ -189,7 +189,7 @@ export default function ResearchRanking() {
       <motion.span
         variants={squareVariants}
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 md:-right-[30px] h-7 w-7 bg-[#00A4EF] lg:h-10 lg:w-10"
+        className="pointer-events-none absolute bottom-0 right-0 h-7 w-7 bg-[#00A4EF] lg:h-10 lg:w-10"
       />
 
       <div className="custom-container relative z-10">
