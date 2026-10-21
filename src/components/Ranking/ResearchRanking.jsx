@@ -99,7 +99,7 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
       className="group relative flex flex-col overflow-hidden"
     >
       {/* Full card background image */}
-      <div className="relative aspect-[245/253] w-full overflow-hidden">
+      <div className="relative aspect-[200/150] md:aspect-[245/240] w-full overflow-hidden">
         <Image
           src={process.env.IMG_PATH + cardBg}
           alt=""
@@ -111,12 +111,9 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
           unoptimized
         />
 
-        {/* Overlay for bottom text area */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
         {/* White logo panel — top portion */}
-        <div className="absolute inset-x-5 top-5 bg-white sm:inset-x-6 sm:top-6 lg:inset-x-7 lg:top-7"
-          style={{ height: '45%' }}
+        <div className="bg-white w-full p-8 sm:p-10 lg:p-12"
+          style={{ height: '60%' }}
         >
           <div className="relative h-full w-full">
             <Image
@@ -124,17 +121,17 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
               alt={logoAlt}
               fill
               sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-              className="object-contain p-4 sm:p-5"
+              className="object-contain"
               quality={100}
               unoptimized
             />
           </div>
         </div>
 
-        {/* Bottom text — over the gradient overlay */}
-        <div className="absolute inset-x-5 bottom-5 sm:inset-x-6 sm:bottom-6 lg:inset-x-7 lg:bottom-6">
-          <p className="text-[10px] text-white/70 sm:text-[11px]">{badge}</p>
-          <p className="mt-1 text-[13px] font-semibold leading-snug text-white sm:text-[14px] lg:text-[15px]">
+        {/* Bottom text */}
+        <div className="relative px-8 pb-8 sm:px-10 sm:pb-10 lg:px-12 lg:pb-12">
+          <p className="text-[12px] text-white sm:text-[14px] text-center md:text-start">{badge}</p>
+          <p className="mt-1 text-[16px] font-semibold leading-snug text-white sm:text-[20px] lg:text-[24px] text-center md:text-start">
             {title}
           </p>
         </div>
@@ -150,7 +147,7 @@ function PartnerCard({ icon, iconAlt, text }) {
   return (
     <motion.div
       variants={partnerCardVariants}
-      className="flex items-center gap-4 border border-[#E0E0E0] bg-white px-5 py-4 shadow-sm
+      className="flex items-center gap-4 border border-[#000000] bg-white px-5 py-4 shadow-sm
                  sm:gap-5 sm:px-6 sm:py-5"
     >
       {/* Left orange accent line */}
@@ -170,7 +167,7 @@ function PartnerCard({ icon, iconAlt, text }) {
       </div>
 
       {/* Text */}
-      <p className="text-[13px] font-medium leading-snug text-black sm:text-[14px]">{text}</p>
+      <p className="text-[13px] font-medium leading-snug text-black sm:text-[15px] lg:text-[17px]">{text}</p>
     </motion.div>
   );
 }
@@ -192,7 +189,7 @@ export default function ResearchRanking() {
       <motion.span
         variants={squareVariants}
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 h-10 w-7 bg-[#4CC3F0] lg:h-14 lg:w-10"
+        className="pointer-events-none absolute bottom-0 right-0 md:-right-[30px] h-7 w-7 bg-[#00A4EF] lg:h-10 lg:w-10"
       />
 
       <div className="custom-container relative z-10">
@@ -202,9 +199,9 @@ export default function ResearchRanking() {
         ══════════════════════════════════ */}
         <motion.h2
           variants={headingVariants}
-          className="text-center text-[22px] sm:text-[26px] lg:text-[32px] xl:text-[36px]"
+          className="text-center text-[28px] lg:text-[34px] xl:text-[48px] "
         >
-          <span className="font-light">Credible Media &amp; </span>
+          <span >Credible Media &amp; </span>
           <span className="font-bold italic">Research Rankings</span>
         </motion.h2>
 
@@ -220,14 +217,14 @@ export default function ResearchRanking() {
         ══════════════════════════════════ */}
         <motion.h2
           variants={headingVariants}
-          className="mt-16 text-center text-[22px] sm:text-[26px] lg:mt-20 lg:text-[32px] xl:text-[36px]"
+          className="mt-16 text-center lg:mt-20 text-[28px] lg:text-[34px] xl:text-[48px] "
         >
-          <span className="font-light">International &amp; </span>
+          <span >International &amp; </span>
           <span className="font-bold italic">Industry Partnerships</span>
         </motion.h2>
 
         {/* 2 partner cards */}
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:gap-5">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:gap-[60px]">
           {PARTNER_CARDS.map((card) => (
             <PartnerCard key={card.id} {...card} />
           ))}

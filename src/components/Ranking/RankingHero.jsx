@@ -72,14 +72,12 @@ export default function RankingHero() {
         <motion.div
           variants={shapeVariants}
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 w-32 sm:w-40 lg:w-48 xl:w-56"
+          className="pointer-events-none absolute -bottom-[120px] right-0 w-32 sm:w-40 lg:w-48 xl:w-64"
         >
           <img
-            src={process.env.IMG_PATH + "images/home/cube-shap-2.webp"}
-           alt=""
-            width={500}
-            height={500}
-            className="h-auto w-full"
+            src={process.env.IMG_PATH + "images/home/grident-cube-img.webp"}
+            alt="" 
+            className="h-auto w-full object-cover"
           />
         </motion.div>
  
@@ -87,7 +85,7 @@ export default function RankingHero() {
         <motion.div variants={textContainerVariants} className="relative z-10">
           <motion.h1
             variants={fadeUp}
-            className="text-[26px] leading-tight sm:text-[30px] lg:text-[34px] xl:text-[40px]"
+            className="  leading-tight text-[30px] lg:text-[34px] xl:text-[48px] "
           >
             <span className="block font-normal">Ranked. Respected.</span>
             <span className="block font-bold italic">Result-Oriented.</span>
