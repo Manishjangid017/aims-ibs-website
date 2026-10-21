@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
+import { motion } from 'framer-motion'; 
 /* ─────────────────────────────────────────────
    Data
 ───────────────────────────────────────────── */
@@ -10,18 +9,21 @@ const ROW_1 = [
     id: 'r1-1',
     rank: '#20',
     badge: 'Ranked among the',
+    logo:'images/ranking/20.webp',
     title: 'Top 20 B-Schools in South India',
   },
   {
     id: 'r1-2',
     rank: '#2',
     badge: 'Ranked #2',
+    logo:'images/ranking/2.webp',
     title: 'in Infrastructure (Among South Indian B-Schools)',
   },
   {
     id: 'r1-3',
     rank: '#4',
     badge: 'Ranked #4',
+    logo:'images/ranking/4.webp',
     title: 'in Highest Salary Offered',
   },
 ];
@@ -31,12 +33,14 @@ const ROW_2 = [
     id: 'r2-1',
     rank: '#4',
     badge: 'Ranked #4',
+    logo:'images/ranking/4.webp',
     title: 'in Overall Ranking in South India',
   },
   {
     id: 'r2-2',
     rank: '#15',
     badge: 'Ranked #15',
+    logo:'images/ranking/15.webp',
     title: 'in India for Top ROI (Return on Investment)',
   },
 ];
@@ -75,15 +79,15 @@ const dotVariants = {
 /* ─────────────────────────────────────────────
    RankCard
 ───────────────────────────────────────────── */
-function RankCard({ rank, badge, title }) {
+function RankCard({ rank, badge, title,logo }) {
   return (
     <motion.div variants={cardVariants} className="flex flex-col max-w-[200px] md:max-w-[300px] w-full">
       {/* Large rank number */}
-      <span
-        className="font-inter text-[var(--color-brand-purple)] leading-[0.9] font-bold text-[60px] sm:text-[100px]  md:text-[120px] text-center sm:text-start" 
-      >
-        {rank}
-      </span>
+     <img
+  src={process.env.IMG_PATH + logo}
+  alt={`Rank ${rank}`}
+  className="h-full w-full max-h-[60px] sm:max-h-[120px] object-contain object-center sm:object-left"
+/>
 
       {/* Small badge */}
       <span className="mt-3 block text-[14px] leading-tight text-[#212121] font-[var(--font-sans)] sm:text-[18px] text-center sm:text-start">
