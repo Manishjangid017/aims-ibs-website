@@ -60,7 +60,6 @@ export default function RankedResult() {
       viewport={{ once: true, amount: 0.15 }}
       className="relative overflow-hidden bg-[#43358F]"
     >
-
       {/* ══════════════════════════════════
           Decorative shapes
       ══════════════════════════════════ */}
@@ -107,7 +106,7 @@ export default function RankedResult() {
         className="pointer-events-none absolute bottom-0 right-0 h-10 w-7 bg-brand-orange
                    lg:h-[90px] lg:w-[60px]"
       />
- <motion.span
+      <motion.span
         variants={squareVariants}
         aria-hidden="true"
         className="pointer-events-none absolute bottom-0 right-0 h-5 w-16 bg-brand-orange
@@ -118,12 +117,8 @@ export default function RankedResult() {
       ══════════════════════════════════ */}
       <div className="custom-container relative z-10 py-20 xl:py-24">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14 xl:gap-20">
-
           {/* ── LEFT: Text content ── */}
-          <motion.div
-            variants={textContainerVariants}
-            className="flex-1 lg:max-w-[52%]"
-          >
+          <motion.div variants={textContainerVariants} className="flex-1 lg:max-w-[52%]">
             {/* Heading */}
             <motion.h2
               variants={fadeUp}
@@ -138,7 +133,7 @@ export default function RankedResult() {
             <motion.p
               variants={fadeUp}
               className="mt-2 md:mt-4 text-[13px] leading-relaxed text-white
-                         sm:text-[15px] xl:text-[16px] font-[var(-font-general-sans)]"
+                         sm:text-[15px] xl:text-[16px] font-general-sans"
             >
               One of India&rsquo;s best B-Schools, with global links and real-world learning.
             </motion.p>
@@ -147,29 +142,25 @@ export default function RankedResult() {
             <motion.p
               variants={fadeUp}
               className="mt-3 md:mt-5 text-[13px] leading-[1.8] text-white
-                         sm:text-[15px] xl:text-[16px] font-[var(-font-general-sans)]"
+                         sm:text-[15px] xl:text-[16px] font-general-sans"
             >
-              At AIMS IBS, over 6000 of our students are now building careers across 27 cities and
-              15 countries. Our campus has been ranked among the top B-Schools in South India, and
-              companies trust us, with 4300+ recruiters hiring our talent. The best part? These
-              numbers aren&rsquo;t just stats.
+              At AIMS IBS, over 6000 of our students are now building careers across 27 cities and 15 countries. Our
+              campus has been ranked among the top B-Schools in South India, and companies trust us, with 4300+
+              recruiters hiring our talent. The best part? These numbers aren&rsquo;t just stats.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className=" text-[13px] leading-[1.8] text-white 
-                         sm:text-[15px] xl:text-[16px] font-[var(-font-general-sans)]"
+                         sm:text-[15px] xl:text-[16px] font-general-sans"
             >
-              They&rsquo;re proof that when you choose AIMS IBS, you&rsquo;re choosing a future
-              that&rsquo;s already been built, and it&rsquo;s waiting for you to walk into it.
+              They&rsquo;re proof that when you choose AIMS IBS, you&rsquo;re choosing a future that&rsquo;s already
+              been built, and it&rsquo;s waiting for you to walk into it.
             </motion.p>
           </motion.div>
 
           {/* ── RIGHT: Campus / Students photo ── */}
-          <motion.div
-            variants={imgVariants}
-            className="w-full overflow-hidden lg:flex-1"
-          >
+          <motion.div variants={imgVariants} className="w-full overflow-hidden lg:flex-1">
             <div className="relative w-full overflow-hidden aspect-square">
               <Image
                 src={process.env.IMG_PATH + 'images/ranking/Rectangle_3466939.webp'}
@@ -182,7 +173,6 @@ export default function RankedResult() {
               />
             </div>
           </motion.div>
-
         </div>
       </div>
     </motion.section>
