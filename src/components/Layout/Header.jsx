@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const TOP_LINKS = [
@@ -35,6 +36,12 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close mobile menu and desktop dropdowns on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
   return (
     <>
       <div className="hidden bg-black text-white md:block">
@@ -78,11 +85,12 @@ export default function Header() {
                       {link.label}
                       <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
                     </Link>
-                    <div className="invisible absolute left-0 top-full min-w-50 translate-y-2 border bg-white py-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="invisible absolute left-0 top-full min-w-70 translate-y-2 border bg-white py-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
+                          onClick={(e) => e.currentTarget.closest('.group')?.querySelector('a')?.blur()}
                           className="block px-4 py-2 text-xs font-medium uppercase tracking-wide text-black transition-colors hover:bg-brand-orange/10 hover:text-brand-orange"
                         >
                           {child.label}

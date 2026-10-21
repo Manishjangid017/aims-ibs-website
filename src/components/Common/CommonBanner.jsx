@@ -76,7 +76,7 @@ export default function CommonBanner({
       {/* White box: under the image on mobile, bottom-left / bottom-right from md up */}
       <motion.div
         variants={BOX[position]}
-        className={`relative overflow-hidden bg-white px-[16px] lg:px-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,36vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
+        className={`relative overflow-hidden bg-white px-[16px] lg:pl-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,36vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
       >
         {/* Red cube (flipped automatically for the right side) */}
         <div

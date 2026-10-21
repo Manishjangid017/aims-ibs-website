@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
-import { fadeLeft, fadeRight, fadeUp, stagger, viewport } from '@/_lib/motion';
+import { stagger, viewport } from '@/_lib/motion';
 
 const ease = 'easeOut';
 
@@ -11,8 +11,13 @@ const listStagger = stagger(0.08);
 
 // Photo cards rise in
 const cardIn = {
-  hidden: { opacity: 0, y: 50, scale: 0.94 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease } },
+  hidden: { y: 50, scale: 0.94 },
+  visible: { y: 0, scale: 1, transition: { duration: 0.8, ease } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease } },
 };
 
 // Orange border "draws" itself: top line -> right side down -> bottom line back to the left
@@ -130,7 +135,7 @@ export default function VisionMission() {
 
           {/* Row 1: Vision | photo | Mission | photo */}
           <div className="relative z-10 grid gap-8 md:grid-cols-2 md:items-center lg:grid-cols-[233fr_224fr_31fr_212fr_42fr_224fr_29fr] lg:items-start lg:gap-0">
-            <motion.div variants={fadeLeft} className="lg:col-start-1 lg:mt-9 lg:max-w-[73%] xl:mt-12">
+            <motion.div variants={fadeUp} className="lg:col-start-1 lg:mt-9 lg:max-w-[73%] xl:mt-12">
               <h2 className="mb-4 text-3xl font-bold italic sm:text-4xl lg:mb-5 lg:text-3xl xl:text-4xl 2xl:text-[44px]">
                 Vision
               </h2>
@@ -191,7 +196,7 @@ export default function VisionMission() {
               />
             </motion.div>
 
-            <motion.div variants={fadeRight} className="lg:col-start-4 lg:bg-white lg:p-5">
+            <motion.div variants={fadeUp} className="lg:col-start-4 lg:bg-white lg:p-5">
               <h2 className="mb-4 text-3xl font-bold italic sm:text-4xl lg:mb-5 lg:text-3xl xl:text-4xl 2xl:text-[44px]">
                 Objectives
               </h2>
