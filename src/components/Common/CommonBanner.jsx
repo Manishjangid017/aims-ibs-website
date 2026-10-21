@@ -76,7 +76,7 @@ export default function CommonBanner({
       {/* White box: under the image on mobile, bottom-left / bottom-right from md up */}
       <motion.div
         variants={BOX[position]}
-        className={`relative overflow-hidden bg-white px-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,36vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
+        className={`relative overflow-hidden bg-white px-[16px] lg:px-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,36vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
       >
         {/* Red cube (flipped automatically for the right side) */}
         <div
@@ -103,7 +103,7 @@ export default function CommonBanner({
           )}
 
           {actions.length > 0 && (
-            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3 lg:mt-9">
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap lg:gap-3 gap-2 lg:mt-9">
               {actions.map((action) => {
                 const { Icon, hover } = ICONS[action.icon] ?? ICONS.arrow;
                 const Tag = action.download ? 'a' : Link;
@@ -113,7 +113,7 @@ export default function CommonBanner({
                     key={action.label}
                     href={action.href}
                     {...(action.download ? { download: true } : {})}
-                    className={`group inline-flex items-center gap-3 border px-6 py-3.5 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:-translate-y-0.5 lg:text-sm ${
+                    className={`group inline-flex items-center gap-3 border px-4 lg:px-6 py-3.5 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:-translate-y-0.5 lg:text-sm ${
                       VARIANTS[action.variant] ?? VARIANTS.primary
                     }`}
                   >
