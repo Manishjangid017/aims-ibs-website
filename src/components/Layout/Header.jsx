@@ -13,10 +13,10 @@ const TOP_LINKS = [
 const NAV_LINKS = [
   {
     label: 'About',
-    href: '/about-us',
+    href: '/',
     children: [
       { label: 'Welcome note & Board Members', href: '/aims-ibs-family' },
-      { label: 'Leadership', href: '/leadership' },
+      { label: 'Vision Mission and Objectives', href: '/vision-mission' },
     ],
   },
   {

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeUp, viewport } from '@/_lib/motion';
+import parse from 'html-react-parser';
 
 const ease = 'easeOut';
 
@@ -29,7 +30,6 @@ const boxVariants = (x) => ({
 
 const BOX = { left: boxVariants(-80), right: boxVariants(80) };
 
-// Content starts at the container edge (--edge); the box itself stays flush to the section edge
 const POSITION = {
   left: 'md:left-0 md:pl-[var(--edge)] md:pr-8 lg:pr-[min(12vw, 40px)]',
   right: 'md:right-0 md:pr-[var(--edge)] md:pl-8 lg:pl-[min(12vw,230px)]',
@@ -93,7 +93,7 @@ export default function CommonBanner({
         <div className="relative z-10">
           <motion.h1 variants={fadeUp} className="text-[30px] leading-tight sm:text-[32px] lg:text-[40px]">
             <span className="block font-light">{lineOne}</span>
-            <span className="block font-semibold italic">{lineTwo}</span>
+            {lineTwo && <span className="block italic">{parse(lineTwo)}</span>}
           </motion.h1>
 
           {description && (

@@ -8,10 +8,10 @@ export default function MainAimsFamliy() {
   return (
     <>
       <CommonBanner
-        image="images/about-us/aiims-family-bg-img.webp"
+        image="/images/about-us/aiims-family-bg-img.webp"
         position="left"
         lineOne="Welcome to the"
-        lineTwo="AIMS IBS Family"
+        lineTwo="<b>AIMS IBS Family</b>"
         description="Your goals have a home. And it starts right here."
         actions={[
           { label: 'Join Today', href: '/apply-now', variant: 'primary', icon: 'arrow' },
