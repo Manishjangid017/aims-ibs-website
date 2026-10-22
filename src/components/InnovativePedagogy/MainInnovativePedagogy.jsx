@@ -2,6 +2,9 @@
 import React from 'react';
 import CommonBanner from '../Common/CommonBanner';
 import TeachingMethodology from './TeachingMethodology';
+import VisualEnrichment from './VisualEnrichment';
+import CareerDrivenPedagogy from './CareerDrivenPedagogy';
+import IndustryAligned from './IndustryAligned';
 
 export default function MainInnovativePedagogy() {
   return (
@@ -18,6 +21,9 @@ export default function MainInnovativePedagogy() {
         ]}
       />
       <TeachingMethodology />
+      <VisualEnrichment />
+      <CareerDrivenPedagogy />
+      <IndustryAligned />
     </>
   );
 }

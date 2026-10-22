@@ -107,7 +107,7 @@ export default function TeachingMethodology() {
                 </div>
 
                 {/* Icon: tilts -20deg on hover */}
-                <div className="relative z-10 size-14 shrink-0 transition-transform duration-500 ease-out group-hover:-rotate-20 group-hover:scale-110 sm:size-16 lg:size-25">
+                <div className="relative z-10 size-18 shrink-0 transition-transform duration-500 ease-out group-hover:-rotate-20 group-hover:scale-110 sm:size-16 lg:size-25">
                   <Image
                     src={process.env.IMG_PATH + m.icon}
                     alt=""
