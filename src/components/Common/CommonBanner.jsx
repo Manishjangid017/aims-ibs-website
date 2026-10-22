@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeUp, viewport } from '@/_lib/motion';
+import parse from 'html-react-parser';
 
 const ease = 'easeOut';
 
@@ -29,7 +30,6 @@ const boxVariants = (x) => ({
 
 const BOX = { left: boxVariants(-80), right: boxVariants(80) };
 
-// Content starts at the container edge (--edge); the box itself stays flush to the section edge
 const POSITION = {
   left: 'md:left-0 md:pl-[var(--edge)] md:pr-8 lg:pr-[min(12vw, 40px)]',
   right: 'md:right-0 md:pr-[var(--edge)] md:pl-8 lg:pl-[min(12vw,230px)]',
@@ -76,7 +76,7 @@ export default function CommonBanner({
       {/* White box: under the image on mobile, bottom-left / bottom-right from md up */}
       <motion.div
         variants={BOX[position]}
-        className={`relative overflow-hidden bg-white px-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,36vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
+        className={`relative overflow-hidden bg-white px-[16px] lg:pl-[var(--edge)] py-8 md:absolute md:bottom-0 md:w-[calc(var(--edge)+clamp(380px,43vw,695px))] md:py-10 lg:py-[73px] ${POSITION[position]}`}
       >
         {/* Red cube (flipped automatically for the right side) */}
         <div
@@ -92,8 +92,8 @@ export default function CommonBanner({
 
         <div className="relative z-10">
           <motion.h1 variants={fadeUp} className="text-[30px] leading-tight sm:text-[32px] lg:text-[40px]">
-            <span className="block font-light">{lineOne}</span>
-            <span className="block font-semibold italic">{lineTwo}</span>
+            {lineOne && <span className="block font-light">{parse(lineOne)}</span>}
+            {lineTwo && <span className="block italic">{parse(lineTwo)}</span>}
           </motion.h1>
 
           {description && (
@@ -103,7 +103,7 @@ export default function CommonBanner({
           )}
 
           {actions.length > 0 && (
-            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3 lg:mt-9">
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap lg:gap-3 gap-2 lg:mt-9">
               {actions.map((action) => {
                 const { Icon, hover } = ICONS[action.icon] ?? ICONS.arrow;
                 const Tag = action.download ? 'a' : Link;
@@ -113,7 +113,7 @@ export default function CommonBanner({
                     key={action.label}
                     href={action.href}
                     {...(action.download ? { download: true } : {})}
-                    className={`group inline-flex items-center gap-3 border px-6 py-3.5 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:-translate-y-0.5 lg:text-sm ${
+                    className={`group inline-flex items-center gap-3 border px-4 lg:px-6 py-3.5 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:-translate-y-0.5 lg:text-sm ${
                       VARIANTS[action.variant] ?? VARIANTS.primary
                     }`}
                   >
