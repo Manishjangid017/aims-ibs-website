@@ -1,25 +1,33 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight, Download } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1];
-const BackgroundImg = 'images/ranking/Hero_Section.webp';
+const BackgroundImg = "images/ranking/Hero_Section.webp";
 
 /* ── Framer-motion variants ──────────────────────────────── */
 
 // Hero image: subtle zoom-in on load
 const imgVariants = {
   hidden: { scale: 1.06, opacity: 0 },
-  visible: { scale: 1, opacity: 1, transition: { duration: 1.4, ease: 'easeOut' } },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 1.4, ease: "easeOut" },
+  },
 };
 
 // White panel slides in from the right
 const panelVariants = {
   hidden: { x: 60, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.9, ease: 'easeOut', delay: 0.25 } },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.9, ease: "easeOut", delay: 0.25 },
+  },
 };
 
 // Stagger wrapper for text children
@@ -31,21 +39,30 @@ const textContainerVariants = {
 // Each text child: fade + rise
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
 };
 
 // Decorative shape: slides in from bottom-right
 const shapeVariants = {
   hidden: { opacity: 0, x: 50, y: 50 },
-  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 1, ease: 'easeOut', delay: 0.7 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { duration: 1, ease: "easeOut", delay: 0.7 },
+  },
 };
 
 export default function RankingHero() {
   return (
-     <motion.section
+    <motion.section
       initial="hidden"
       animate="visible"
-      className="relative min-h-screen w-full overflow-hidden bg-neutral-900 sm:min-h-[620px]"
+      className="relative min-h-screen w-full overflow-hidden bg-neutral-900 sm:min-h-[640px]"
     >
       {/* ════════ FULL BACKGROUND IMAGE ════════ */}
       <motion.div variants={imgVariants} className="absolute inset-0">
@@ -59,7 +76,7 @@ export default function RankingHero() {
           className="object-cover object-center"
         />
       </motion.div>
- 
+
       {/* ════════ SINGLE CARD — BOTTOM RIGHT ════════ */}
       <motion.div
         variants={panelVariants}
@@ -72,15 +89,15 @@ export default function RankingHero() {
         <motion.div
           variants={shapeVariants}
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-[120px] right-0 w-32 sm:w-40 lg:w-48 xl:w-64"
+          className="pointer-events-none absolute -right-[20px] -bottom-[120px] w-[200px] lg:-bottom-[250px] lg:-right-[100px] lg:w-[400px]"
         >
           <img
             src={process.env.IMG_PATH + "images/home/grident-cube-img.webp"}
-            alt="" 
+            alt=""
             className="h-auto w-full object-cover"
           />
         </motion.div>
- 
+
         {/* Text content */}
         <motion.div variants={textContainerVariants} className="relative z-10">
           <motion.h1
@@ -90,7 +107,7 @@ export default function RankingHero() {
             <span className="block font-normal">Ranked. Respected.</span>
             <span className="block font-bold italic">Result-Oriented.</span>
           </motion.h1>
- 
+
           <motion.p
             variants={fadeUp}
             className="mt-3  text-[14px] md:text-[16px] leading-relaxed text-black font-medium"
@@ -98,7 +115,7 @@ export default function RankingHero() {
             One of India&rsquo;s best B-Schools, with global links and
             real-world learning.
           </motion.p>
- 
+
           <motion.div
             variants={fadeUp}
             className="my-4 md:my-6 flex flex-wrap items-center gap-3"
@@ -114,7 +131,7 @@ export default function RankingHero() {
               Join Today
               <ArrowRight className="size-3" />
             </Link>
- 
+
             {/* Secondary — outline */}
             <a
               href="/handbook.pdf"
