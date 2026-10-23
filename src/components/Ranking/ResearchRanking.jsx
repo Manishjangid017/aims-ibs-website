@@ -1,36 +1,36 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 /* ─────────────────────────────────────────────
    Data — Media & Research Ranking cards
 ───────────────────────────────────────────── */
 const MEDIA_CARDS = [
   {
-    id: 1, 
-    cardBg: 'images/ranking/Container.webp',
+    id: 1,
+    cardBg: "images/ranking/Container.webp",
     /* white logo panel image */
-    logo: 'images/ranking/image_39.webp',
-    logoAlt: 'BW BusinessWorld logo',
-    badge: 'Ranked AIMS IBS among the',
-    title: 'Top 3 Emerging B-Schools in India – Business World',
+    logo: "images/ranking/image_39.webp",
+    logoAlt: "BW BusinessWorld logo",
+    badge: "Ranked AIMS IBS among the",
+    title: "Top 3 Emerging B-Schools in India – Business World",
   },
   {
     id: 2,
-    cardBg: 'images/ranking/Container-1.webp',
-    logo: 'images/ranking/Container-2.webp',
-    logoAlt: 'India Today logo',
-    badge: 'Recognised AIMS IBS as one of the',
-    title: 'Best Business Schools in South India – India Today',
+    cardBg: "images/ranking/Container-1.webp",
+    logo: "images/ranking/Container-2.webp",
+    logoAlt: "India Today logo",
+    badge: "Recognised AIMS IBS as one of the",
+    title: "Best Business Schools in South India – India Today",
   },
   {
     id: 3,
-    cardBg: 'images/ranking/Container-3.webp',
-    logo: 'images/ranking/Container-4.webp',
-    logoAlt: 'Business Standard logo',
-    badge: 'Featured in Top MBA Institution lists',
-    title: 'The Week & Business Standard',
+    cardBg: "images/ranking/Container-3.webp",
+    logo: "images/ranking/Container-4.webp",
+    logoAlt: "Business Standard logo",
+    badge: "Featured in Top MBA Institution lists",
+    title: "The Week & Business Standard",
   },
 ];
 
@@ -40,15 +40,15 @@ const MEDIA_CARDS = [
 const PARTNER_CARDS = [
   {
     id: 1,
-    icon: 'images/ranking/Group 160.webp',
-    iconAlt: 'Academic tie-ups icon',
-    text: 'Strong academic tie-ups and international exposure program',
+    icon: "images/ranking/Group 160.webp",
+    iconAlt: "Academic tie-ups icon",
+    text: "Strong academic tie-ups and international exposure program",
   },
   {
     id: 2,
-    icon: 'images/ranking/Group 161.webp',
-    iconAlt: 'Industry collaboration icon',
-    text: 'Collaboration with 90+ industry experts and 4300+ recruiters',
+    icon: "images/ranking/Group 161.webp",
+    iconAlt: "Industry collaboration icon",
+    text: "Collaboration with 90+ industry experts and 4300+ recruiters",
   },
 ];
 
@@ -62,7 +62,7 @@ const sectionVariants = {
 
 const headingVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const cardVariants = {
@@ -80,13 +80,17 @@ const partnerCardVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const squareVariants = {
   hidden: { opacity: 0, scale: 0 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'backOut', delay: 0.4 } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "backOut", delay: 0.4 },
+  },
 };
 
 /* ─────────────────────────────────────────────
@@ -112,9 +116,7 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
         />
 
         {/* White logo panel — top portion */}
-        <div className="bg-white w-full p-8 "
-          style={{ height: '60%' }}
-        >
+        <div className="bg-white w-full p-8 " style={{ height: "60%" }}>
           <div className="relative h-full w-full">
             <Image
               src={process.env.IMG_PATH + logo}
@@ -130,7 +132,9 @@ function MediaCard({ cardBg, logo, logoAlt, badge, title }) {
 
         {/* Bottom text */}
         <div className="relative px-8 pb-8 sm:px-10 sm:pb-10 lg:px-12 lg:pb-12">
-          <p className="text-[12px] text-white sm:text-[14px] text-center md:text-start">{badge}</p>
+          <p className="text-[12px] text-white sm:text-[14px] text-center md:text-start">
+            {badge}
+          </p>
           <p className="mt-1 md:mt-2 text-[16px] leading-snug text-white sm:text-[20px] lg:text-[24px] text-center md:text-start">
             {title}
           </p>
@@ -167,7 +171,9 @@ function PartnerCard({ icon, iconAlt, text }) {
       </div>
 
       {/* Text */}
-      <p className="text-[13px] font-medium leading-snug text-black sm:text-[15px] lg:text-[17px]">{text}</p>
+      <p className="text-[18px] font-medium leading-[20px] text-black sm:text-[20px] lg:text-[24px]">
+        {text}
+      </p>
     </motion.div>
   );
 }
@@ -184,7 +190,6 @@ export default function ResearchRanking() {
       viewport={{ once: true, amount: 0.1 }}
       className="relative overflow-hidden bg-white py-14 lg:py-20 xl:py-24"
     >
-
       {/* ── Bottom-right cyan square accent ── */}
       <motion.span
         variants={squareVariants}
@@ -193,7 +198,6 @@ export default function ResearchRanking() {
       />
 
       <div className="custom-container relative z-10">
-
         {/* ══════════════════════════════════
             Block 1 — Credible Media & Research Rankings
         ══════════════════════════════════ */}
@@ -201,7 +205,7 @@ export default function ResearchRanking() {
           variants={headingVariants}
           className="text-center text-[28px] lg:text-[34px] xl:text-[48px] "
         >
-          <span >Credible Media &amp; </span>
+          <span>Credible Media &amp; </span>
           <span className="font-bold italic">Research Rankings</span>
         </motion.h2>
 
@@ -219,7 +223,7 @@ export default function ResearchRanking() {
           variants={headingVariants}
           className="mt-16 text-center lg:mt-20 text-[28px] lg:text-[34px] xl:text-[48px] "
         >
-          <span >International &amp; </span>
+          <span>International &amp; </span>
           <span className="font-bold italic">Industry Partnerships</span>
         </motion.h2>
 
@@ -229,7 +233,6 @@ export default function ResearchRanking() {
             <PartnerCard key={card.id} {...card} />
           ))}
         </div>
-
       </div>
     </motion.section>
   );

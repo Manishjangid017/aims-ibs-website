@@ -1,13 +1,14 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+@import "swiper/css/pagination";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "swiper/css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-sans: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-general-sans: var(--font-general-sans-loaded), ui-sans-serif, system-ui, sans-serif;
+  --font-general-sans:
+    var(--font-general-sans-loaded), ui-sans-serif, system-ui, sans-serif;
   --color-brand-orange: #f04b1d;
   --color-brand-black: #090909;
   --color-brand-purple: #43358f;
@@ -100,5 +101,21 @@ button {
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-certificate {
+    background: linear-gradient(
+      270deg,
+      #d7cee3 0%,
+      rgba(227, 206, 217, 0.5) 100%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-certificate {
+    background: #ebe1ea;
   }
 }
