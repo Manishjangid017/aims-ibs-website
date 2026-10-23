@@ -81,7 +81,7 @@ export default function HeroAccreditation() {
       {/* ════════ SINGLE CARD — BOTTOM LEFT ════════ */}
       <motion.div
         variants={panelVariants}
-        className="absolute bottom-0 left-0 z-10 w-full overflow-hidden bg-white sm:w-[60%] lg:w-[55%] py-12 px-20"
+        className="absolute bottom-0 left-0 z-10 w-full overflow-hidden bg-white sm:w-[60%] lg:w-[55%]  px-6 py-8 sm:px-10 sm:py-10 lg:py-12 lg:px-20"
       >
         <motion.div
           variants={shapeVariants}
@@ -98,7 +98,7 @@ export default function HeroAccreditation() {
         {/* Text content - shifted to the right end using ml-auto and max-w */}
         <motion.div
           variants={textContainerVariants}
-          className="relative z-10 ml-auto max-w-[85%] flex flex-col items-start"
+          className="relative z-10 md:ml-auto md:max-w-[85%] flex flex-col items-start"
         >
           <motion.h1
             variants={fadeUp}
@@ -119,7 +119,7 @@ export default function HeroAccreditation() {
 
           <motion.div
             variants={fadeUp}
-            className="my-4 md:my-6 flex flex-wrap items-center justify-end gap-3"
+            className="my-4 md:my-6 flex items-center justify-end gap-3"
           >
             {/* Primary — orange */}
             <Link
