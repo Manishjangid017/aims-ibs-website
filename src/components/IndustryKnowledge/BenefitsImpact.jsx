@@ -88,7 +88,7 @@ export default function BenefitsImpact() {
               </div>
 
               {/* content card with its own background image */}
-              <motion.div className="flex flex-1 flex-col items-start justify-center gap-2 border border-[#43358F] bg-[lightgray] bg-[url('/images/industry-partner/Frame_1707480825.webp')] bg-cover bg-center bg-no-repeat p-[26px] md:mt-4 md:p-[30px]">
+              <motion.div className="flex flex-1 flex-col items-start justify-center gap-2 border border-[#43358F] bg-[lightgray] bg-[url('/images/industry-partner/Frame_1707480825.webp')] bg-cover bg-center bg-no-repeat p-[26px] md:mt-4 md:p-[30px] opacity-80">
                 <motion.ul
                   variants={listContainer}
                   className="space-y-[8px] text-[14px] text-black md:text-[18px]"
