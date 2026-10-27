@@ -1,60 +1,61 @@
-"use client";
-import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+'use client';
+import Link from 'next/link';
+import { ChevronDown, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 
 const TOP_LINKS = [
   {
-    label: "Industry/Corporate Exposure",
-    href: "/industry-corporate-exposure",
+    label: 'Industry/Corporate Exposure',
+    href: '/industry-corporate-exposure',
   },
-  { label: "AICTE", href: "/aicte" },
-  { label: "Admissions", href: "/admissions" },
+  { label: 'AICTE', href: '/aicte' },
+  { label: 'Admissions', href: '/admissions' },
 ];
 
 const NAV_LINKS = [
   {
-    label: "About",
-    href: "#",
+    label: 'About',
+    href: '#',
     children: [
-      { label: "Welcome note & Board Members", href: "/aims-ibs-family" },
-      { label: "Vision Mission and Objectives", href: "/vision-mission" },
+      { label: 'Welcome note & Board Members', href: '/aims-ibs-family' },
+      { label: 'Vision Mission and Objectives', href: '/vision-mission' },
       {
-        label: "Ranking and credentials",
-        href: "/rankings-credentials-our-strenghts",
+        label: 'Ranking and credentials',
+        href: '/rankings-credentials-our-strenghts',
       },
       {
-        label: "Accreditations & Affiliations",
-        href: "/accreditations-affiliations",
+        label: 'Accreditations & Affiliations',
+        href: '/accreditations-affiliations',
       },
       {
-        label: "Industry / Knowledge Partners",
-        href: "/industry-knowledge-partners",
+        label: 'Industry / Knowledge Partners',
+        href: '/industry-knowledge-partners',
       },
     ],
   },
   {
-    label: "Why AIMS IBS",
-    href: "#",
+    label: 'Why AIMS IBS',
+    href: '#',
     children: [
-      { label: "Innovative Pedagogy", href: "/value-added-programs-pedagogy" },
-      { label: "Postgraduate", href: "/programs/pg" },
+      { label: 'Innovative Pedagogy', href: '/value-added-programs-pedagogy' },
+      { label: 'Our 360-degree Training approach', href: '/our-360-degree-training-approach' },
+      { label: 'Postgraduate', href: '/programs/pg' },
     ],
   },
   {
-    label: "Programs",
-    href: "/programs",
+    label: 'Programs',
+    href: '/programs',
     children: [
-      { label: "Undergraduate", href: "/programs/ug" },
-      { label: "Postgraduate", href: "/programs/pg" },
+      { label: 'Undergraduate', href: '/programs/ug' },
+      { label: 'Postgraduate', href: '/programs/pg' },
     ],
   },
-  { label: "Faculty", href: "/faculty" },
-  { label: "Student Life", href: "/student-life" },
-  { label: "Placements", href: "/placements" },
+  { label: 'Faculty', href: '/faculty' },
+  { label: 'Student Life', href: '/student-life' },
+  { label: 'Placements', href: '/placements' },
 ];
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -67,8 +68,7 @@ export default function Header() {
   };
 
   // Opening one submenu automatically closes the previous one
-  const toggleSub = (label) =>
-    setOpenMenu((prev) => (prev === label ? null : label));
+  const toggleSub = (label) => setOpenMenu((prev) => (prev === label ? null : label));
 
   // Close the menu on route change
   useEffect(() => {
@@ -78,25 +78,25 @@ export default function Header() {
   // Lock page scroll while the mobile menu is open
   useEffect(() => {
     const html = document.documentElement;
-    html.style.overflow = open ? "hidden" : "";
-    document.body.style.overflow = open ? "hidden" : "";
+    html.style.overflow = open ? 'hidden' : '';
+    document.body.style.overflow = open ? 'hidden' : '';
     return () => {
-      html.style.overflow = "";
-      document.body.style.overflow = "";
+      html.style.overflow = '';
+      document.body.style.overflow = '';
     };
   }, [open]);
 
   // Close on Escape, and when the screen grows to desktop size
   useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && closeMenu();
-    const mq = window.matchMedia("(min-width: 1024px)");
+    const onKey = (e) => e.key === 'Escape' && closeMenu();
+    const mq = window.matchMedia('(min-width: 1024px)');
     const onChange = (e) => e.matches && closeMenu();
 
-    window.addEventListener("keydown", onKey);
-    mq.addEventListener("change", onChange);
+    window.addEventListener('keydown', onKey);
+    mq.addEventListener('change', onChange);
     return () => {
-      window.removeEventListener("keydown", onKey);
-      mq.removeEventListener("change", onChange);
+      window.removeEventListener('keydown', onKey);
+      mq.removeEventListener('change', onChange);
     };
   }, []);
 
@@ -149,12 +149,7 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          onClick={(e) =>
-                            e.currentTarget
-                              .closest(".group")
-                              ?.querySelector("a")
-                              ?.blur()
-                          }
+                          onClick={(e) => e.currentTarget.closest('.group')?.querySelector('a')?.blur()}
                           className="block px-4 py-2 text-xs font-medium uppercase tracking-wide text-black transition-colors hover:bg-brand-orange/10 hover:text-brand-orange"
                         >
                           {child.label}
@@ -226,7 +221,7 @@ export default function Header() {
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
               className="absolute left-0 right-0 top-full z-10 max-h-[calc(100svh-58px)] overflow-y-auto overscroll-contain border-t bg-white shadow-xl md:max-h-[calc(100svh-90px)] lg:hidden"
             >
               <nav className="custom-container flex flex-col py-2">
@@ -254,20 +249,18 @@ export default function Header() {
                         onClick={() => toggleSub(link.label)}
                         aria-expanded={isOpen}
                         className={`flex w-full items-center justify-between py-3 text-xs font-semibold uppercase tracking-wide transition-colors ${
-                          isOpen
-                            ? "text-brand-orange"
-                            : "hover:text-brand-orange"
+                          isOpen ? 'text-brand-orange' : 'hover:text-brand-orange'
                         }`}
                       >
                         {link.label}
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                         />
                       </button>
 
                       <div
                         className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                         }`}
                       >
                         <div className="overflow-hidden">
