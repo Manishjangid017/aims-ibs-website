@@ -34,6 +34,10 @@ const NAV_LINKS = [
         label: 'Industry / Knowledge Partners',
         href: '/industry-knowledge-partners',
       },
+      {
+        label: 'Our Proud Recent Batches',
+        href: '/proud-batches',
+      },
     ],
   },
   {
