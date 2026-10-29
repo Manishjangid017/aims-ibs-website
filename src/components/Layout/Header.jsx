@@ -12,7 +12,7 @@ const TOP_LINKS = [
     href: '/industry-corporate-exposure',
   },
   { label: 'AICTE', href: '/aicte' },
-  { label: 'Admissions', href: '/admissions' },
+  { label: 'Admissions', href: '/admission-process' },
 ];
 
 const NAV_LINKS = [
