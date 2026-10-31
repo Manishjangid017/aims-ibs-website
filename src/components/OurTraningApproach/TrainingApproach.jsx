@@ -1,5 +1,3 @@
-'use client';
-
 import { createRef, useEffect, useMemo, useState } from 'react';
 import {
   AnimatePresence,

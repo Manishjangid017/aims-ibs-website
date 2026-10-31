@@ -1,56 +1,51 @@
-"use client";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-
-/* ─────────────────────────────────────────────
-   Data — 9 university partner cards
-───────────────────────────────────────────── */
 const PARTNERS = [
   {
     id: 1,
-    name: "IAE Bordeaux, France",
-    src: "images/accreditations/image.webp",
+    name: 'IAE Bordeaux, France',
+    src: 'images/accreditations/image.webp',
   },
   {
     id: 2,
-    name: "Staffordshire University, UK",
-    src: "images/accreditations/image-3.webp",
+    name: 'Staffordshire University, UK',
+    src: 'images/accreditations/image-3.webp',
   },
   {
     id: 3,
-    name: "IAE France",
-    src: "images/accreditations/image-6.webp",
+    name: 'IAE France',
+    src: 'images/accreditations/image-6.webp',
   },
   {
     id: 4,
-    name: "SIM University, Singapore",
-    src: "images/accreditations/image-1.webp",
+    name: 'SIM University, Singapore',
+    src: 'images/accreditations/image-1.webp',
   },
   {
     id: 5,
-    name: "Harvard Business Publishing Education",
-    src: "images/accreditations/image-4.webp",
+    name: 'Harvard Business Publishing Education',
+    src: 'images/accreditations/image-4.webp',
   },
   {
     id: 6,
-    name: "SHRI – Singapore Human Resources Institute",
-    src: "images/accreditations/image-7.webp",
+    name: 'SHRI – Singapore Human Resources Institute',
+    src: 'images/accreditations/image-7.webp',
   },
   {
     id: 7,
-    name: "Putra Business School, Malaysia",
-    src: "images/accreditations/image-2.webp",
+    name: 'Putra Business School, Malaysia',
+    src: 'images/accreditations/image-2.webp',
   },
   {
     id: 8,
-    name: "University of Stirling, UK",
-    src: "images/accreditations/image-5.webp",
+    name: 'University of Stirling, UK',
+    src: 'images/accreditations/image-5.webp',
   },
   {
     id: 9,
-    name: "James Cook University, Singapore",
-    src: "images/accreditations/image-8.webp",
+    name: 'James Cook University, Singapore',
+    src: 'images/accreditations/image-8.webp',
   },
 ];
 
@@ -66,7 +61,7 @@ const sectionVariants = {
 
 const headingVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
 const cardVariants = {
@@ -84,7 +79,7 @@ const dotVariants = {
   visible: (delay) => ({
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.45, ease: "backOut", delay },
+    transition: { duration: 0.45, ease: 'backOut', delay },
   }),
 };
 
@@ -167,10 +162,7 @@ export default function GlobalInternational() {
       {/* ── Content ── */}
       <div className="custom-container relative z-10">
         {/* Heading */}
-        <motion.h2
-          variants={headingVariants}
-          className="text-[28px] lg:text-[34px] xl:text-[48px] "
-        >
+        <motion.h2 variants={headingVariants} className="text-[28px] lg:text-[34px] xl:text-[48px] ">
           <span>Global Collaborations &amp; </span>
           <span className="font-bold italic">International Associations</span>
         </motion.h2>
@@ -180,9 +172,8 @@ export default function GlobalInternational() {
           variants={headingVariants}
           className="mt-3 max-w-[900px] text-[13px] leading-relaxed text-[#212121] sm:text-[16px] lg:text-[18px]"
         >
-          Our students also gain international insights through academic
-          exchange, foreign internships, and cross-border learning frameworks,
-          thanks to our affiliations with:
+          Our students also gain international insights through academic exchange, foreign internships, and cross-border
+          learning frameworks, thanks to our affiliations with:
         </motion.p>
 
         {/* ── 3-column grid of partner cards ── */}

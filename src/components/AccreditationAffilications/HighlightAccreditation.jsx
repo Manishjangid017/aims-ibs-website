@@ -1,33 +1,28 @@
-"use client";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-
-/* ─────────────────────────────────────────────
-   Data
-───────────────────────────────────────────── */
 const ROW1_HIGHLIGHTS = [
-  "Recognized by the Ministry of Higher Education Govt. of Karnataka",
-  "Governed under the Department of Higher Education",
+  'Recognized by the Ministry of Higher Education Govt. of Karnataka',
+  'Governed under the Department of Higher Education',
   {
-    main: "Subdivisions include:",
+    main: 'Subdivisions include:',
     sub: [
-      "Department of Collegiate Education",
-      "Department of Technical Education",
-      "Karnataka State Higher Education Council",
-      "Karnataka Examination Authority",
+      'Department of Collegiate Education',
+      'Department of Technical Education',
+      'Karnataka State Higher Education Council',
+      'Karnataka Examination Authority',
     ],
   },
-  "AICTE-Compliant Curriculum & Academic Standards",
-  "Ensuring national credibility and institutional trust",
+  'AICTE-Compliant Curriculum & Academic Standards',
+  'Ensuring national credibility and institutional trust',
 ];
 
 const ROW2_HIGHLIGHTS = [
-  "Academic Collaboration with Université Montesquieu – Bordeaux IV, France",
-  "Affiliated with Université de Bordeaux, France",
-  "Opportunities for academic exchange & global immersion",
-  "Exposure to international curriculum frameworks & research perspectives",
-  "Enhancing student readiness for global careers",
+  'Academic Collaboration with Université Montesquieu – Bordeaux IV, France',
+  'Affiliated with Université de Bordeaux, France',
+  'Opportunities for academic exchange & global immersion',
+  'Exposure to international curriculum frameworks & research perspectives',
+  'Enhancing student readiness for global careers',
 ];
 
 /* ─────────────────────────────────────────────
@@ -55,7 +50,7 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut" },
+    transition: { duration: 0.65, ease: 'easeOut' },
   },
 };
 
@@ -71,18 +66,18 @@ const imgReveal = {
 /* ─────────────────────────────────────────────
    Highlights Card
 ───────────────────────────────────────────── */
-const BOX_COLORS = ["#FFD6E7", "#FFF3B0", "#D9D4FA", "#C9ECFF"];
+const BOX_COLORS = ['#FFD6E7', '#FFF3B0', '#D9D4FA', '#C9ECFF'];
 
-function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
+function HighlightCard({ items, decoratorSide = 'right', motionVariant }) {
   return (
     <motion.div
       variants={motionVariant}
       whileHover="hover"
       initial="initial"
       className={`group relative flex h-full flex-col overflow-hidden bg-white ${
-        decoratorSide === "right"
-          ? "border-l-[3px] border-solid border-[#F04B1D]"
-          : "border-r-[3px] border-solid border-[#9080EE]"
+        decoratorSide === 'right'
+          ? 'border-l-[3px] border-solid border-[#F04B1D]'
+          : 'border-r-[3px] border-solid border-[#9080EE]'
       } lg:p-[48px] lg:px-[56px] p-[30px] pb-[50px] lg:pb-auto shadow-[0_4px_6px_-2px_rgba(66,77,87,0.10),0_12px_16px_-4px_rgba(66,77,87,0.15)] transition-shadow duration-300 cursor-default`}
     >
       {/* Card heading */}
@@ -94,21 +89,18 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
           <li key={i} className="flex items-start gap-3">
             <span
               className={`mt-[6px] h-[7px] w-[7px] shrink-0 ${
-                decoratorSide === "right" ? "bg-[#F04B1D]" : "bg-[#9080EE]"
+                decoratorSide === 'right' ? 'bg-[#F04B1D]' : 'bg-[#9080EE]'
               }`}
             />
             <span className="text-[14px] md:text-[15px] text-black">
-              {typeof item === "string" ? (
+              {typeof item === 'string' ? (
                 item
               ) : (
                 <>
                   {item.main}
                   <ul className="mt-1 space-y-0.5 pl-2">
                     {item.sub.map((s, j) => (
-                      <li
-                        key={j}
-                        className="text-[14px] md:text-[15px] text-black"
-                      >
+                      <li key={j} className="text-[14px] md:text-[15px] text-black">
                         · {s}
                       </li>
                     ))}
@@ -123,11 +115,11 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
       {/* Decorative stacked vertical lines */}
       <div
         className={`pointer-events-none absolute bottom-0 flex items-end gap-[3px] w-[300px] md:w-[500px] z-30 ${
-          decoratorSide === "right" ? "-right-[60%]" : "-left-[60%]"
+          decoratorSide === 'right' ? '-right-[60%]' : '-left-[60%]'
         }`}
       >
         <img
-          src={process.env.IMG_PATH + "images/accreditations/Group_163.webp"}
+          src={process.env.IMG_PATH + 'images/accreditations/Group_163.webp'}
           alt="Decoration"
           className="w-full h-auto object-contain relative z-10"
         />
@@ -136,14 +128,14 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
       {/* 4 colour boxes — bottom se slide-up, sirf hover par */}
       <div
         className={`pointer-events-none absolute bottom-0 z-[5] flex items-end gap-2 ${
-          decoratorSide === "right" ? "left-[56px]" : "right-[56px]"
+          decoratorSide === 'right' ? 'left-[56px]' : 'right-[56px]'
         }`}
       >
         {BOX_COLORS.map((color, i) => (
           <motion.span
             key={i}
             variants={{
-              initial: { y: "100%", opacity: 0 },
+              initial: { y: '100%', opacity: 0 },
               hover: {
                 y: 0,
                 opacity: 1,
@@ -154,7 +146,7 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
                 },
               },
             }}
-            transition={{ duration: 0.3, ease: "easeIn" }} // hover hatne par wapas niche
+            transition={{ duration: 0.3, ease: 'easeIn' }} // hover hatne par wapas niche
             className="block h-[14px] w-[20px] md:h-[24px] md:w-[36px]"
             style={{ backgroundColor: color }}
           />
@@ -167,11 +159,9 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
           initial: { opacity: 0, scale: 0.6 },
           hover: { opacity: 1, scale: 1 },
         }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`pointer-events-none absolute w-[280px] h-[280px] md:w-[350px] md:h-[350px] rounded-full blur-2xl z-10 ${
-          decoratorSide === "right"
-            ? "-bottom-20 -right-20 bg-[#F04B1D]/25"
-            : "-bottom-20 -left-20 bg-[#9080EE]/25"
+          decoratorSide === 'right' ? '-bottom-20 -right-20 bg-[#F04B1D]/25' : '-bottom-20 -left-20 bg-[#9080EE]/25'
         }`}
       />
     </motion.div>
@@ -180,24 +170,10 @@ function HighlightCard({ items, decoratorSide = "right", motionVariant }) {
 /* ─────────────────────────────────────────────
    Text + Image Block (left or right layout)
 ───────────────────────────────────────────── */
-function TextImageBlock({
-  heading,
-  headingBold,
-  description,
-  imgSrc,
-  imgAlt,
-  textColor,
-  motionVariant,
-}) {
+function TextImageBlock({ heading, headingBold, description, imgSrc, imgAlt, textColor, motionVariant }) {
   return (
-    <motion.div
-      variants={motionVariant}
-      className="flex flex-col justify-between gap-8 lg:gap-[60px]"
-    >
-      <motion.div
-        variants={motionVariant}
-        className="flex flex-col justify-between gap-4 md:gap-6 lg:gap-8"
-      >
+    <motion.div variants={motionVariant} className="flex flex-col justify-between gap-8 lg:gap-[60px]">
+      <motion.div variants={motionVariant} className="flex flex-col justify-between gap-4 md:gap-6 lg:gap-8">
         {/* Heading */}
         <motion.h2
           variants={fadeUp}
@@ -208,10 +184,7 @@ function TextImageBlock({
         </motion.h2>
 
         {/* Description */}
-        <motion.p
-          variants={fadeUp}
-          className={`text-[14px] lg:text-[16px] max-w-[500px] ${textColor} `}
-        >
+        <motion.p variants={fadeUp} className={`text-[14px] lg:text-[16px] max-w-[500px] ${textColor} `}>
           {description}
         </motion.p>
       </motion.div>
@@ -271,11 +244,7 @@ export default function HighlightAccreditation() {
             />
 
             {/* Right: Highlights card */}
-            <HighlightCard
-              items={ROW1_HIGHLIGHTS}
-              decoratorSide="right"
-              motionVariant={fadeRight}
-            />
+            <HighlightCard items={ROW1_HIGHLIGHTS} decoratorSide="right" motionVariant={fadeRight} />
           </div>
         </div>
       </motion.div>
@@ -293,11 +262,7 @@ export default function HighlightAccreditation() {
         <div className="custom-container py-12 lg:py-16 xl:py-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
             {/* Left: Highlights card */}
-            <HighlightCard
-              items={ROW2_HIGHLIGHTS}
-              decoratorSide="left"
-              motionVariant={fadeLeft}
-            />
+            <HighlightCard items={ROW2_HIGHLIGHTS} decoratorSide="left" motionVariant={fadeLeft} />
 
             {/* Right: Global Academic Partnerships */}
             <TextImageBlock

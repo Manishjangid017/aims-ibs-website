@@ -1,5 +1,9 @@
+'use client';
 import React from 'react';
 import CommonBanner from '../Common/CommonBanner';
+import AffordableEducation from './AffordableEducation';
+import PartnerBanks from './PartnerBanks';
+import HelpSupport from './HelpSupport';
 
 export default function MainEducationLoan() {
   return (
@@ -15,6 +19,9 @@ export default function MainEducationLoan() {
           { label: 'Download Handbook', href: '/handbook.pdf', variant: 'outline', icon: 'download', download: true },
         ]}
       />
+      <AffordableEducation />
+      <PartnerBanks />
+      <HelpSupport />
     </>
   );
 }

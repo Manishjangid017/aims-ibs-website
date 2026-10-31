@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeUp, fadeLeft, stagger, viewport } from '@/_lib/motion';

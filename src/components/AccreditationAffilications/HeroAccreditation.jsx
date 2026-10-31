@@ -1,12 +1,10 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ease = [0.22, 1, 0.36, 1];
-const BackgroundImg = "images/accreditations/Hero_Container.webp";
+const BackgroundImg = 'images/accreditations/Hero_Container.webp';
 
 /* ── Framer-motion variants ──────────────────────────────── */
 
@@ -16,7 +14,7 @@ const imgVariants = {
   visible: {
     scale: 1,
     opacity: 1,
-    transition: { duration: 1.4, ease: "easeOut" },
+    transition: { duration: 1.4, ease: 'easeOut' },
   },
 };
 
@@ -26,7 +24,7 @@ const panelVariants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.9, ease: "easeOut", delay: 0.25 },
+    transition: { duration: 0.9, ease: 'easeOut', delay: 0.25 },
   },
 };
 
@@ -42,7 +40,7 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut" },
+    transition: { duration: 0.65, ease: 'easeOut' },
   },
 };
 
@@ -53,7 +51,7 @@ const shapeVariants = {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { duration: 1, ease: "easeOut", delay: 0.7 },
+    transition: { duration: 1, ease: 'easeOut', delay: 0.7 },
   },
 };
 
@@ -89,7 +87,7 @@ export default function HeroAccreditation() {
           className="pointer-events-none absolute -left-[20px] -bottom-[120px] w-[200px] lg:-bottom-[250px] lg:-left-[100px] lg:w-[400px]"
         >
           <img
-            src={process.env.IMG_PATH + "images/home/grident-cube-img.webp"}
+            src={process.env.IMG_PATH + 'images/home/grident-cube-img.webp'}
             alt=""
             className="h-auto w-full object-cover"
           />
@@ -100,10 +98,7 @@ export default function HeroAccreditation() {
           variants={textContainerVariants}
           className="relative z-10 md:ml-auto md:max-w-[85%] flex flex-col items-start"
         >
-          <motion.h1
-            variants={fadeUp}
-            className="leading-tight text-[30px] lg:text-[34px] xl:text-[40px]"
-          >
+          <motion.h1 variants={fadeUp} className="leading-tight text-[30px] lg:text-[34px] xl:text-[40px]">
             <span className="block font-normal">Accreditations &</span>
             <span className="block font-bold italic"> Affiliations.</span>
           </motion.h1>
@@ -112,15 +107,11 @@ export default function HeroAccreditation() {
             variants={fadeUp}
             className="mt-3 text-[14px] md:text-[16px] leading-relaxed text-black font-medium"
           >
-            At our institution, academic integrity and excellence are grounded
-            in strong affiliations and recognized accreditations, both
-            nationally and internationally.
+            At our institution, academic integrity and excellence are grounded in strong affiliations and recognized
+            accreditations, both nationally and internationally.
           </motion.p>
 
-          <motion.div
-            variants={fadeUp}
-            className="my-4 md:my-6 flex items-center justify-end gap-3"
-          >
+          <motion.div variants={fadeUp} className="my-4 md:my-6 flex items-center justify-end gap-3">
             {/* Primary — orange */}
             <Link
               href="/apply-now"
