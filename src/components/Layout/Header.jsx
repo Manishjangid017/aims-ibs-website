@@ -46,6 +46,7 @@ const NAV_LINKS = [
     children: [
       { label: 'Innovative Pedagogy', href: '/value-added-programs-pedagogy' },
       { label: 'Our 360-degree Training approach', href: '/our-360-degree-training-approach' },
+      { label: 'Industry-Relevant Certificate', href: '/industry-relevant-certifications' },
       { label: 'Postgraduate', href: '/programs/pg' },
     ],
   },
@@ -55,6 +56,9 @@ const NAV_LINKS = [
     children: [
       { label: 'Undergraduate', href: '/programs/ug' },
       { label: 'Postgraduate', href: '/programs/pg' },
+      {
+        label: 'Roots to Fruits – MBA Induction Program', href: '/mba-induction-program'
+      },
     ],
   },
   { label: 'Faculty', href: '/faculty' },
@@ -252,9 +256,8 @@ export default function Header() {
                         type="button"
                         onClick={() => toggleSub(link.label)}
                         aria-expanded={isOpen}
-                        className={`flex w-full items-center justify-between py-3 text-xs font-semibold uppercase tracking-wide transition-colors ${
-                          isOpen ? 'text-brand-orange' : 'hover:text-brand-orange'
-                        }`}
+                        className={`flex w-full items-center justify-between py-3 text-xs font-semibold uppercase tracking-wide transition-colors ${isOpen ? 'text-brand-orange' : 'hover:text-brand-orange'
+                          }`}
                       >
                         {link.label}
                         <ChevronDown
@@ -263,9 +266,8 @@ export default function Header() {
                       </button>
 
                       <div
-                        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                        }`}
+                        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                          }`}
                       >
                         <div className="overflow-hidden">
                           <div className="pb-2">
