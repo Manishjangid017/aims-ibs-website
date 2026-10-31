@@ -1,4 +1,5 @@
 import { generateSEO } from "@/_helper/seo";
+import MainEducationLoan from "@/components/EducationLoan/MainEducationLoan";
 
 export const metadata = generateSEO({
   title: "Welcome to the AIMS IBS Family | AIMS IBS Business School",
@@ -10,5 +11,5 @@ export const metadata = generateSEO({
 });
 
 export default function EducationLoanPage() {
-  return <MainAdmissionProcess />;
+  return <MainEducationLoan />;
 }
