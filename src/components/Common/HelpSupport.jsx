@@ -36,7 +36,7 @@ const girlIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
 };
 
-export default function HelpSupport() {
+export default function HelpSupport({ title, boldtxt, desc, buttntxt, btnaction }) {
   return (
     <motion.section
       variants={sectionStagger}
@@ -81,24 +81,23 @@ export default function HelpSupport() {
                 variants={fadeUp}
                 className="text-3xl leading-tight text-white sm:text-4xl lg:text-[36px] lg:leading-[1.25]"
               >
-                <span className="block font-light">Need Help With Your</span>
-                <span className="block font-semibold italic">Education Loan?</span>
+                <span className="block font-light">{title}</span>
+                <span className="block font-semibold italic">{boldtxt}</span>
               </motion.h2>
 
               <motion.p
                 variants={fadeUp}
                 className="mt-4 max-w-[548px] text-sm leading-relaxed text-white/90 sm:text-base lg:mt-6 lg:text-[17px] lg:leading-[1.8]"
               >
-                Our admissions and finance support teams are here to assist you with guidance and documentation for your
-                loan application.
+                {desc}
               </motion.p>
 
               <motion.div variants={fadeLeft} className="mt-6 lg:mt-9">
                 <Link
-                  href="/contact-us"
+                  href={btnaction}
                   className="group inline-flex items-center gap-3 rounded-[2px] bg-brand-orange px-7 py-4 text-sm font-medium uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d63f14] hover:shadow-[0_10px_24px_rgba(240,75,29,0.4)]"
                 >
-                  Contact Support
+                  {buttntxt}
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </motion.div>

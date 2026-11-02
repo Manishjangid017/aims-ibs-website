@@ -3,7 +3,7 @@ import React from 'react';
 import CommonBanner from '../Common/CommonBanner';
 import AffordableEducation from './AffordableEducation';
 import PartnerBanks from './PartnerBanks';
-import HelpSupport from './HelpSupport';
+import HelpSupport from '../Common/HelpSupport';
 
 export default function MainEducationLoan() {
   return (
@@ -21,7 +21,14 @@ export default function MainEducationLoan() {
       />
       <AffordableEducation />
       <PartnerBanks />
-      <HelpSupport />
+      <HelpSupport
+        title="Need Help With Your"
+        boldtxt="Education Loan?"
+        desc=" Our admissions and finance support teams are here to assist you with guidance and documentation for your
+                loan application."
+        buttntxt="Contact Support"
+        btnaction="/contact-us"
+      />
     </>
   );
 }
