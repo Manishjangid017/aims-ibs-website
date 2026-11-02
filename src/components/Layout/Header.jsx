@@ -11,7 +11,7 @@ const TOP_LINKS = [
     label: 'Industry/Corporate Exposure',
     href: '/industry-corporate-exposure',
   },
-  { label: 'AICTE', href: '/aicte' },
+  { label: 'AICTE', href: '/share-your-feedback' },
   { label: 'Admissions', href: '/admission-process' },
 ];
 
