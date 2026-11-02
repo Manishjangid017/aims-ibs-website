@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeLeft, fadeRight, fadeUp, stagger, viewport } from '@/_lib/motion';

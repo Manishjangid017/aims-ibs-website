@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 /* ── Motion variants ─────────────────────────────────────── */
 const ease = [0.22, 1, 0.36, 1];
@@ -27,7 +25,7 @@ const contentVariants = {
       duration: 0.85,
       ease,
       delay: 0.2,
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.13,
     },
   },
@@ -36,7 +34,7 @@ const contentVariants = {
 // Each text child: fade + rise
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
 // Logo circle: scale in
@@ -45,7 +43,7 @@ const logoVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.65, ease: "backOut", delay: 0.35 },
+    transition: { duration: 0.65, ease: 'backOut', delay: 0.35 },
   },
 };
 
@@ -55,7 +53,7 @@ const shapeVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: "backOut", delay: 0.45 },
+    transition: { duration: 0.5, ease: 'backOut', delay: 0.45 },
   },
 };
 
@@ -65,7 +63,7 @@ const squareVariants = {
   visible: (i) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.4, ease: "easeOut", delay: 0.4 + i * 0.08 },
+    transition: { duration: 0.4, ease: 'easeOut', delay: 0.4 + i * 0.08 },
   }),
 };
 
@@ -90,7 +88,7 @@ export default function AcademicExcellence() {
                        lg:right-12 lg:top-8 lg:w-[82px] "
       >
         <Image
-          src={process.env.IMG_PATH + "images/ranking/Group_157.webp"}
+          src={process.env.IMG_PATH + 'images/ranking/Group_157.webp'}
           alt=""
           fill
           className="object-contain"
@@ -123,10 +121,7 @@ export default function AcademicExcellence() {
           >
             <div className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] md:px-4 xl:px-0 overflow-hidden flex items-center justify-center">
               <img
-                src={
-                  process.env.IMG_PATH +
-                  "images/accreditations/Rectangle_3466939.webp"
-                }
+                src={process.env.IMG_PATH + 'images/accreditations/Rectangle_3466939.webp'}
                 alt="AIMS IBS students on campus steps"
                 sizes="500px"
                 className="object-cover object-center"
@@ -151,10 +146,7 @@ export default function AcademicExcellence() {
                 "
             >
               <Image
-                src={
-                  process.env.IMG_PATH +
-                  "images/accreditations/Ellipse_827.webp"
-                }
+                src={process.env.IMG_PATH + 'images/accreditations/Ellipse_827.webp'}
                 alt="Bangalore University emblem"
                 fill
                 sizes="120px"
@@ -175,9 +167,7 @@ export default function AcademicExcellence() {
                 "
             >
               <span className="block">Academic Excellence with</span>
-              <span className="block font-bold italic">
-                Bangalore University
-              </span>
+              <span className="block font-bold italic">Bangalore University</span>
             </motion.h2>
 
             {/* Paragraph 1 */}
@@ -189,11 +179,10 @@ export default function AcademicExcellence() {
                   lg:text-[16px]
                 "
             >
-              Our academic journey is enriched through our proud affiliation
-              with Bangalore University, one of India&rsquo;s most reputed and
-              multidisciplinary public universities. Recognised for its academic
-              rigour, research-driven environment, and a legacy of excellence,
-              Bangalore University sets the benchmark for quality education.
+              Our academic journey is enriched through our proud affiliation with Bangalore University, one of
+              India&rsquo;s most reputed and multidisciplinary public universities. Recognised for its academic rigour,
+              research-driven environment, and a legacy of excellence, Bangalore University sets the benchmark for
+              quality education.
             </motion.p>
 
             {/* Paragraph 2 */}
@@ -205,9 +194,8 @@ export default function AcademicExcellence() {
                   lg:text-[16px]
                 "
             >
-              This affiliation reinforces our commitment to offering globally
-              relevant programs that are grounded in strong academic values and
-              hold national recognition.
+              This affiliation reinforces our commitment to offering globally relevant programs that are grounded in
+              strong academic values and hold national recognition.
             </motion.p>
           </motion.div>
         </div>
