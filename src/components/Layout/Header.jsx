@@ -66,10 +66,7 @@ const NAV_LINKS = [
   {
     label: 'Student Life',
     href: '/student-life',
-    children: [
-      { label: 'Download Resources', href: '/download-resources' },
-      { label: 'Download Resources', href: '/download-resources' },
-    ],
+    children: [{ label: 'Download Resources', href: '/downloads-resources' }],
   },
   { label: 'Placements', href: '/placements' },
 ];
